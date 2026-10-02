@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Security Result</title>
+
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='style.css') }}">
+
+</head>
+
+<body>
+
+<div class="container">
+
+    <div class="result-box">
+
+        <div class="icon">🔍</div>
+
+        <h1>{{ result.status }}</h1>
+
+        <div class="result-type">
+            {{ result.type }}
+        </div>
+
+
+        <div class="result-section">
+
+            <h3>Observed Behavior</h3>
+
+            <p>
+                {{ result.message }}
+            </p>
+
+        </div>
+
+
+        <div class="result-section">
+
+            <h3>Technical Explanation</h3>
+
+            <p>
+                {{ result.technical }}
+            </p>
+
+        </div>
+
+
+        <div class="comparison">
+
+            <div>
+                <strong>Vulnerable</strong>
+                <p>Unsafe query construction</p>
+            </div>
+
+            <div>
+                <strong>Secure</strong>
+                <p>Parameterized query</p>
+            </div>
+
+        </div>
+
+
+        <a href="/" class="analysis-button">
+            Back to Home
+        </a>
+
+    </div>
+
+</div>
+
+</body>
+
+</html>

@@ -1,0 +1,1 @@
+{"root":["./src/App.tsx","./src/main.tsx","./src/components/ChatInput.tsx","./src/components/ChatWindow.tsx","./src/components/Header.tsx","./src/components/MessageBubble.tsx","./src/components/RiskBadge.tsx","./src/components/ScenarioCards.tsx","./src/components/SecurityChecklist.tsx"],"version":"5.9.3"}

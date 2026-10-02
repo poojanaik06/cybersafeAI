@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Secure Bank Portal</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+
+<body>
+
+    <div class="bank-app-shell">
+
+        <div class="portal-topbar">
+            <div class="bank-pill">Nexus Bank</div>
+            <div class="security-badge">
+                <span class="security-dot"></span>
+                Protected access
+            </div>
+        </div>
+
+        <div class="bank-card">
+
+            <aside class="brand-panel">
+                <div class="bank-mark">N</div>
+                <p class="eyebrow">Private Banking</p>
+                <h2>Nexus Bank</h2>
+                <p class="tagline">
+                    Secure access for clients, advisors, and authorized staff.
+                </p>
+
+                <div class="account-summary">
+                    <div class="summary-chip active">
+                        <span class="chip-label">Client portal</span>
+                        <strong>Secure</strong>
+                    </div>
+                    <div class="summary-chip">
+                        <span class="chip-label">Protected mode</span>
+                        <strong>Online</strong>
+                    </div>
+                </div>
+
+                <div class="trust-grid">
+                    <div>
+                        <strong>256-bit</strong>
+                        <span>Encryption</span>
+                    </div>
+                    <div>
+                        <strong>24/7</strong>
+                        <span>Monitoring</span>
+                    </div>
+                </div>
+            </aside>
+
+            <main class="login-panel {{ security_state if security_state else 'neutral' }}-state">
+                <div class="login-header">
+                    <p>Welcome back</p>
+                    <h1>Secure Login</h1>
+                </div>
+
+                {% if login_result %}
+                    <div class="status-banner {{ security_state or 'neutral' }}">
+                        <strong>{{ login_result.status }}</strong>
+                        <p>{{ login_result.message }}</p>
+                    </div>
+                {% endif %}
+
+                <form method="POST" class="login-form">
+                    <label for="username">Username</label>
+                    <input
+                        id="username"
+                        type="text"
+                        name="username"
+                        placeholder="Enter username"
+                        required
+                        autocomplete="username"
+                    >
+
+                    <label for="password">Password</label>
+                    <input
+                        id="password"
+                        type="password"
+                        name="password"
+                        placeholder="Enter password"
+                        required
+                        autocomplete="current-password"
+                    >
+
+                    <div class="form-row">
+                        <label class="checkbox-wrap">
+                            <input type="checkbox" checked>
+                            <span>Remember device</span>
+                        </label>
+                        <a href="#">Need help?</a>
+                    </div>
+
+                    <button type="submit" class="primary-button">
+                        Sign in securely
+                    </button>
+                </form>
+
+                <div class="security-note">
+                    <h3>Security Check</h3>
+                    <p>
+                        The system blocks suspicious SQL-style payloads before any
+                        account verification is attempted.
+                    </p>
+                </div>
+
+                {% if login_result %}
+                    <div class="technical-box">
+                        <h3>Technical Explanation</h3>
+                        <p>{{ login_result.technical }}</p>
+                    </div>
+                {% endif %}
+            </main>
+
+        </div>
+
+    </div>
+
+</body>
+
+</html>

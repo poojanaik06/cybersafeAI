@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Vulnerable Login</title>
+
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='style.css') }}">
+
+</head>
+
+<body>
+
+<div class="container">
+
+    <div class="login-box vulnerable-box">
+
+        <div class="icon">⚠️</div>
+
+        <h1>Vulnerable Login</h1>
+
+        <p class="warning">
+            This page intentionally contains an unsafe database
+            query for educational demonstration.
+        </p>
+
+
+        <form method="POST">
+
+            <label>Username</label>
+
+            <input
+                type="text"
+                name="username"
+                placeholder="Enter username"
+                required
+            >
+
+
+            <label>Password</label>
+
+            <input
+                type="password"
+                name="password"
+                placeholder="Enter password"
+                required
+            >
+
+
+            <button class="danger-button" type="submit">
+                Login
+            </button>
+
+        </form>
+
+
+        <div class="demo-note">
+
+            <strong>Controlled laboratory environment</strong>
+
+            <p>
+                Use only the supplied dummy accounts for normal
+                authentication testing.
+            </p>
+
+        </div>
+
+
+        <a href="/" class="back">← Back to Home</a>
+
+    </div>
+
+</div>
+
+</body>
+
+</html>

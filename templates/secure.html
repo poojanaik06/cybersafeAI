@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Secure Login</title>
+
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='style.css') }}">
+
+</head>
+
+<body>
+
+<div class="container">
+
+    <div class="login-box secure-box">
+
+        <div class="icon">🛡️</div>
+
+        <h1>Secure Login</h1>
+
+        <p class="success">
+            This implementation uses parameterized database queries.
+        </p>
+
+
+        <form method="POST">
+
+            <label>Username</label>
+
+            <input
+                type="text"
+                name="username"
+                placeholder="Enter username"
+                required
+            >
+
+
+            <label>Password</label>
+
+            <input
+                type="password"
+                name="password"
+                placeholder="Enter password"
+                required
+            >
+
+
+            <button class="safe-button" type="submit">
+                Login Securely
+            </button>
+
+        </form>
+
+
+        <div class="demo-note">
+
+            <strong>Protection used</strong>
+
+            <p>
+                User input is treated as data and is not combined
+                directly with the database command.
+            </p>
+
+        </div>
+
+
+        <a href="/" class="back">← Back to Home</a>
+
+    </div>
+
+</div>
+
+</body>
+
+</html>
